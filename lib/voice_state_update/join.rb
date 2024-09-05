@@ -31,9 +31,8 @@ module VoiceStateUpdate
       emoji = "\u{1F91D}"
       connected_emoji = "\u{1F7E2}"
       channel = @event.channel.name
-      user_count = "There are #{users.count} people in this channel.\n"
 
-      text_message = "#{@event.user.username} #{emoji} joined the voice channel #{channel}.\n\n#{user_count}"
+      text_message = "#{@event.user.username} #{emoji} joined the voice channel #{channel}.\n"
       text_message += users.map { |user| "#{connected_emoji} #{user.username}\n" }.join('')
     end
   end
