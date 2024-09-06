@@ -19,7 +19,7 @@ module VoiceStateUpdate
     end
 
     def user_ids
-      users.map(&:id)
+      users.map { |user| user.id.to_s }
     end
 
     def user_keys
