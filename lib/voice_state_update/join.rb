@@ -23,6 +23,7 @@ module VoiceStateUpdate
     end
 
     def user_keys
+      puts user_ids
       # only get keys for users not in the channel at the moment, including user that triggered the event
       USERS.reject { |key, _value| user_ids.include?(key) || key == @event.user.id.to_s }.values
     end
